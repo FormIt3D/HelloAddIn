@@ -1,8 +1,7 @@
 #include "pch.h"
 
-#include "FormItInclude/IScriptInstance.h"
+#include "FormItSupport/WSMScripting/IScriptInstance.h"
 
-#include "HelloDLL.h"
 #include "MyClass.h"
 
 #include <sstream>
