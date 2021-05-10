@@ -3,5 +3,6 @@
     "PluginDescription": "Hello world",
     "PluginType": "Panel",
     "Panel": "PLUGINLOCATION/plugin.html",
-    "PanelIcon": "PLUGINLOCATION/plugin.png"
+    "PanelIcon": "PLUGINLOCATION/plugin.png",
+    "DLLs" : ["PLUGINLOCATION/HelloDLL.dll"]
 }
