@@ -2,7 +2,7 @@
 
 #include "FormItSupport/WSMScripting/IScriptInstance.h"
 
-#include "MyClass.h"
+#include "MyClass/MyClass.h"
 
 #include <sstream>
 

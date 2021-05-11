@@ -1,5 +1,6 @@
 DLL/FormItSupport
 DLL/x64
 DLL/.vs
+DLL/MyClass/x64
 
 HelloDLL.vcxproj.user
