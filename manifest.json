@@ -4,5 +4,6 @@
     "PluginType": "Panel",
     "Panel": "PLUGINLOCATION/plugin.html",
     "PanelIcon": "PLUGINLOCATION/plugin.png",
+    "Platforms": ["WIN"],
     "DLLs" : ["PLUGINLOCATION/MyClass.dll", "PLUGINLOCATION/HelloDLL.dll"]
 }
