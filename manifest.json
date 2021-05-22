@@ -1,6 +1,6 @@
 {
-    "PluginName": "Hello world",
-    "PluginDescription": "Hello world",
+    "PluginName": "Hello AddIn",
+    "PluginDescription": "Hello AddIn Loads DLLs",
     "PluginType": "Panel",
     "Panel": "PLUGINLOCATION/plugin.html",
     "PanelIcon": "PLUGINLOCATION/plugin.png",
