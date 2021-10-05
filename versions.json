@@ -1,0 +1,11 @@
+[
+    {
+        "version":{
+            "major":22,
+            "minor":0,
+            "lastVersion":true,
+            "exactVersion":true
+        },
+        "path":"v22_0"
+    }
+]
