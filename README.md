@@ -11,6 +11,17 @@ Registering HelloDLL JS functions from HelloDLL!!!
 ```
 NOTE: AddIns are versioned and will only run on supported versions of FormIt.
 
+To test this plugin, run the following commands-
+```
+console.log(HelloDLL.Test());
+HelloDLL.Test2();
+HelloDLL.TestArgs(true, 12);
+var myclass= HelloDLL.GetMyClass();
+console.log(JSON.stringify(myclass));
+console.log(JSON.stringify(HelloDLL.PassMyClass(myclass)));
+HelloDLL.NS2.Test();
+```
+
 Add-ins are just normal plugins that also load DLLs that expose new JavaScript APIs inside FormIt.  Add-ins specify the DLLs that are needed in the manifest in the ["DLLs"](https://github.com/FormIt3D/HelloAddIn/blob/main/v22_0/manifest.json#L8) property.
 ```
 "DLLs" : ["PLUGINLOCATION/MyClass.dll", "PLUGINLOCATION/HelloDLL.dll"]
@@ -39,4 +50,4 @@ First [REGISTERAPIMETHODS](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/
 
 Next declare a new Namespace, [REGISTERNAMESPACE](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L20), to put the new APIs into.
 
-Each JS API has an [APIMETHOD](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L22).  See the example code that is commented to explain how APIMETHOD works.
+Each JS API has an [APIMETHOD](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L22).  See the [example code](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp) that is commented to explain how APIMETHOD works.
