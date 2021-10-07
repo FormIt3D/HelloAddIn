@@ -47,8 +47,8 @@ When the solution is built, the DLLs end up in the top directory.  They then mus
 
 Inside [HelloDLL.cpp](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp) is the code to register new JS APIs.
 
-First [REGISTERAPIMETHODS](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L11) needs to wrap the new JS APIs. It also defines a function known to FormIt and is called when FormIt loads the DLLs.
+First [REGISTERAPIMETHODS](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L19) needs to wrap the new JS APIs. It also defines a function known to FormIt and is called when FormIt loads the DLLs.
 
-Next declare a new Namespace, [REGISTERNAMESPACE](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L20), to put the new APIs into.
+Next declare a new Namespace, [REGISTERNAMESPACE](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L32), to put the new APIs into.
 
-Each JS API has an [APIMETHOD](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L22).  See the [example code](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp) that is commented to explain how APIMETHOD works.
+Each JS API has an [APIMETHOD](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp#L32).  See the [example code](https://github.com/FormIt3D/HelloAddIn/blob/main/DLL/HelloDLL.cpp) that is commented to explain how APIMETHOD works.
