@@ -117,13 +117,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXPORT_MYCLASS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXPORT_MYCLASS;FORMIT_CORE_DLL;WIN32</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FormItSupport;$(SolutionDir)FormItSupport/json</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FormItSupport;$(SolutionDir)FormItSupport/json;$(SolutionDir)FormItSupport/WSM/PublicHeaders</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)FormItSupport\FormItCore\lib\RelWithDebInfo\FormItCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy  $(TargetPath) $(SolutionDir)..</Command>
@@ -135,15 +137,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXPORT_MYCLASS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXPORT_MYCLASS;FORMIT_CORE_DLL;WIN32</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FormItSupport;$(SolutionDir)FormItSupport/json</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FormItSupport;$(SolutionDir)FormItSupport/json;$(SolutionDir)FormItSupport/WSM/PublicHeaders</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)FormItSupport\FormItCore\lib\RelWithDebInfo\FormItCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy  $(TargetPath) $(SolutionDir)..</Command>

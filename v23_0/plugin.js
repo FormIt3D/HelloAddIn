@@ -1,4 +1,4 @@
-console.log("Loading v22 HelloAddIn")
+console.log("Loading v23 HelloAddIn")
 
 const createBlock = async (w,l,h) => {
     const pt1 = await WSM.Geom.Point3d(0,0,0);

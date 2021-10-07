@@ -2,6 +2,11 @@
 
 #include "MyClass.h"
 
+namespace FormIt
+{
+    DEFINE_MESSAGE_VOID(FormIt, kHelloAddIn);
+}
+
 DEFINE_JSON_TO_SPECIALIZATION(MyClass)
 {
     return

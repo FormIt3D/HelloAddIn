@@ -1,5 +1,5 @@
 # HelloAddIn
-HelloAddIn is an add-in example.
+HelloAddIn is an add-in example.  It exposes new JS APIs.  It also has a FormIt message listener and creates a new custom message.
 To load this plugin, run this in the FormIt console-
 ```
 FormIt.LoadPlugin("https://formit3d.github.io/HelloAddIn");
@@ -20,6 +20,7 @@ var myclass= HelloDLL.GetMyClass();
 console.log(JSON.stringify(myclass));
 console.log(JSON.stringify(HelloDLL.PassMyClass(myclass)));
 HelloDLL.NS2.Test();
+HelloDLL.BROADCAST_kHelloAddIn();
 ```
 
 Add-ins are just normal plugins that also load DLLs that expose new JavaScript APIs inside FormIt.  Add-ins specify the DLLs that are needed in the manifest in the ["DLLs"](https://github.com/FormIt3D/HelloAddIn/blob/main/v22_0/manifest.json#L8) property.
