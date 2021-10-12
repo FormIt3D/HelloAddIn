@@ -22,12 +22,16 @@
         </div>
         <input id="CreateBlockBtn" type=button value="Create Block" />
         <!--Do not remove below scripts unless you know what you're doing-->
-        <script type="text/javascript" src="https://formit3d.github.io/FormItExamplePlugins/SharedPluginFiles/FormIt.js"></script>
-        <script type="text/javascript" src="https://formit3d.github.io/FormItExamplePlugins/SharedPluginFiles/FormItInterface.js"></script>
-        <script type="text/javascript" src="https://formit3d.github.io/FormItExamplePlugins/SharedPluginFiles/PluginUtils.js"></script>
+        <script type="text/javascript" src="http://formit3d.github.io/SharedPluginUtilities/v23_0/FormItInterface.js"></script>
         <script type="text/javascript" src="plugin.js"></script>
         <script type="text/javascript">
-            FormItInterface.Initialize();
+            FormItInterface.Initialize(function () {
+                FormItInterface.SubscribeMessage("FormIt.Message.kHelloAddIn", function(payload)
+                {
+                    // This callback will be invoked whenever the signal is emitted on the C++/QML side.
+                    FormItInterface.ConsoleLog("(Web Side) msg: " + "FormIt.Message.kHelloAddIn" + " Paylaod: " + payload);
+                });
+            });
         </script>
     </div>
 </body>

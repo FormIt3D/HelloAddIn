@@ -18,18 +18,25 @@
 #include "WSMScripting/IScriptInstance.h"
 #include "FormItCore/include/FormItCoreAPIDLL.h"
 
+// Pick the version to build.
+//#define V22
+#define V23
 namespace FormIt
 {
     // Create a new message type for HelloAddIn
     // NOTE: Currently DECLARE_MESSAGE_VOID doesn't work.  It uses the wrong EXPORT
-    //DECLARE_MESSAGE_VOID(kHelloAddIn);
+#ifdef V22
     struct kHelloAddInType : public FormIt::MessageVoidStruct{
     std::string message() const override
         { return "FormIt.Message.kHelloAddIn"; }
     };
     // The new kHelloAddIn message type
     extern MYCLASS_EXPORT const kHelloAddInType kHelloAddIn;
-};
+#endif
+#ifdef V23
+    DECLARE_MESSAGE_VOID(MYCLASS_EXPORT, kHelloAddIn);
+#endif
+    };
 
 // MyClass is an example class that can roundtrip C++ <-> JS
 class MyClass : public FormIt::MessageListener
@@ -57,8 +64,23 @@ class MyMessageListener : public FormIt::MessageListener
 public:
     MYCLASS_EXPORT MyMessageListener(IScriptInstance* instance) : m_IScriptInstance(instance)
     {
+
         if (m_IScriptInstance)
+        {
+#ifdef V22
+            m_IScriptInstance->Evaluate("console.log(\"HelloAddIn: Loading v22 DLL\")");
+#endif
+#ifdef V23
+            m_IScriptInstance->Evaluate("console.log(\"HelloAddIn: Loading v23 DLL\")");
+#endif
+
+#ifdef V23
+            m_IScriptInstance->Evaluate("console.log(\"RegisterScriptMessage FormIt.Message.kHelloAddIn\")");
+            FormIt::MessageBroadcaster::RegisterScriptMessage("FormIt.Message.kHelloAddIn", &FormIt::kHelloAddIn);
+#endif
+
             m_IScriptInstance->Evaluate("console.log(\"HelloAddIn: Subscribing to FormIt::kHelloAddIn\")");
+        }
 
         // Listen to our new kHelloAddIn messages
         Subscribe(FormIt::kHelloAddIn, [this](MessageStruct const&, MessagePayloadStruct const&)
